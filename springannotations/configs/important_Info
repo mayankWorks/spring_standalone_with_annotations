@@ -1,0 +1,2 @@
+mvn liquibase:generateChangeLog - this command is used to create the change log files for existing tables in the database
+it will create the create table script

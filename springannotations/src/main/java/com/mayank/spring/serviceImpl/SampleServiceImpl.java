@@ -22,7 +22,7 @@ public class SampleServiceImpl implements SampleService{
 	public String display() {
 		// TODO Auto-generated method stub
 		Emp e = new Emp();
-		e.setId(10);
+		e.setId(20);
 		e.setName("mayank");
 		testRepository.save(e);
 		

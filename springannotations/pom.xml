@@ -10,6 +10,7 @@
         <junit.version>4.8.1</junit.version>
         <h2.version>1.4.192</h2.version>
         <spring.data.version>1.10.4.RELEASE</spring.data.version>
+        <liquibase.version>3.4.1</liquibase.version>
     </properties>
     
   <dependencies>
@@ -63,8 +64,29 @@
 		    <artifactId>javax.inject</artifactId>
 		    <version>1</version>
 		</dependency>
-		
+		<dependency>
+		    <groupId>org.liquibase</groupId>
+		    <artifactId>liquibase-core</artifactId>
+		    <version>${liquibase.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.liquibase</groupId>
+		    <artifactId>liquibase-maven-plugin</artifactId>
+		    <version>3.4.1</version>
+		</dependency> 
 	</dependencies>
-	
+
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>                  
+            <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+        </configuration>                
+    </plugin> 
+</plugins>	
+</build>
 </project>
 

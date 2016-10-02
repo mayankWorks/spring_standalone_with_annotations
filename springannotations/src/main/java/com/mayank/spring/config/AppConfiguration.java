@@ -14,11 +14,17 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import liquibase.integration.spring.SpringLiquibase;
+
 @Configuration
 @EnableJpaRepositories("com.mayank.spring.repo")
 @EnableTransactionManagement
 @ComponentScan(basePackages = "com.mayank.spring")
+//@PropertySource("classpath:database.properties")
 public class AppConfiguration {
+	
+	//@Autowired
+    //private Environment env;
 	
 	@Bean
 	public DataSource dataSource(){
@@ -53,5 +59,14 @@ public class AppConfiguration {
 		return txManager;
 	}
 	
+	 @Bean
+	    public SpringLiquibase liquibase()  {
+	        SpringLiquibase liquibase = new SpringLiquibase();
+
+	        liquibase.setDataSource(dataSource());
+	        liquibase.setChangeLog("classpath:db.changelog-master.xml");
+
+	        return liquibase;
+	    }//http://www.baeldung.com/liquibase-refactor-schema-of-java-app
 	
 }
