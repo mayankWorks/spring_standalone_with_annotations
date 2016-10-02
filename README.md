@@ -3,6 +3,14 @@
 spring_standalone_with_annotations : this is a spring based standalone project configured using annotations
 
 Tech used:
-1.Spring 4.1.1 core,context
-2.Hibernate ORM
-3.H2 database
+
+1.Spring 4.3.3.RELEASE core,context
+
+2.Hibernate ORM 4.0.1.Final
+
+3.H2 database 1.4.192
+
+4.Spring Data JPA 1.10.4.RELEASE
+
+5.Added Liquibase maven plugin + jars 3.4.1 : to generate changelog scripts
+use "mvn liquibase:generateChangeLog" command to generate changelog of already created tables in the db
