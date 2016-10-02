@@ -27,27 +27,6 @@ public class MainClass {
 		//context.refresh();
 		SampleService sampleService = context.getBean(SampleService.class);
 		
-		
-		FileOutputStream fout = null;
-		int flag =1;
-		   try{  
-		     fout = new FileOutputStream("");  
-		     String s = "Sachin Tendulkar is my favourite player";  
-		     byte b[] = s.getBytes();//converting string into byte array  
-			 fout.write(b);  
-		     System.out.println("success...");  
-		    }
-		   catch(Exception e)
-		   {
-			   System.out.println("file not fnd");
-			   flag=2;
-		   }  
-		   finally
-		   {
-				System.out.println(flag);
-
-					fout.close();
-		   }
-		  }
+	}
 
 }
