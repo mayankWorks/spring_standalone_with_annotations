@@ -27,6 +27,8 @@ public class MainClass {
 		//context.refresh();
 		SampleService sampleService = context.getBean(SampleService.class);
 		
+		System.out.println("End of main method..........");
+		
 	}
 
 }

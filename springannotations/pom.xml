@@ -51,7 +51,6 @@
 		    <version>${h2.version}</version>
 		</dependency>
 		
-		
 	</dependencies>
 	
 </project>
