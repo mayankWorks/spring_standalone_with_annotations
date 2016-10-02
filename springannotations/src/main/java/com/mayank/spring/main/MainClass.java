@@ -3,7 +3,6 @@
  */
 package com.mayank.spring.main;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,8 +24,9 @@ public class MainClass {
 		
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
 		//context.refresh();
-		SampleService sampleService = context.getBean(SampleService.class);
-		
+		SampleService sampleServiceBean = context.getBean(SampleService.class);
+		sampleServiceBean.display();
+		context.close();
 		System.out.println("End of main method..........");
 		
 	}

@@ -3,15 +3,29 @@ package com.mayank.spring.serviceImpl;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.springframework.stereotype.Service;
+import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.mayank.spring.model.Emp;
+import com.mayank.spring.repo.TestRepository;
 import com.mayank.spring.service.SampleService;
 
 @Service
+@Transactional	
 public class SampleServiceImpl implements SampleService{
 
+	@Inject
+	private TestRepository testRepository;
+	
 	public String display() {
 		// TODO Auto-generated method stub
+		Emp e = new Emp();
+		e.setId(10);
+		e.setName("mayank");
+		testRepository.save(e);
+		
 		return "This is the text returned from the method -- Mayank here";
 	}
 
