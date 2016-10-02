@@ -14,3 +14,4 @@ Tech used:
 
 5.Added Liquibase maven plugin + jars 3.4.1 : to generate changelog scripts
 use "mvn liquibase:generateChangeLog" command to generate changelog of already created tables in the db
+How to open H2 console ? : Just double click on the h2 jar in your local repo and it will open the console(localhost:8082)
